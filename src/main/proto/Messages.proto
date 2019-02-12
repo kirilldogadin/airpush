@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "ru.mail.kdog.dto";
+option java_outer_classname = "DtoProtos";
+
+message Page {
+  UUID uuid = 1;
+  int32 part_full_count = 2;
+  repeated ContentPart contentPart = 3;
+}
+
+message ContentPart {
+  UUID page_uuid = 1;
+  int32 part_num = 2;
+  string content = 3;
+}
+
+message UUID {
+  string value = 1;
+}
